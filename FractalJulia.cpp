@@ -9,7 +9,9 @@ g++ -Wall opencv_exempleCPP.cpp -lopencv_core -lopencv_highgui -lopencv_imgproc 
 #include <complex>
 #include <time.h>
 #include <fstream>
-
+using namespace std;
+using namespace cv;
+Mat image;
 
 
 
@@ -41,4 +43,15 @@ std::complex<long double> c (reel,imaginaire);
 unsigned char brillance=150; 
           unsigned char saturation=150; 
           unsigned char r,g,b;
+
+// definition de la couleur de l'image
+	  HSVtoRGB( & r, & g, & b, couleur, brillance, saturation );
+          image.at<Vec3b>(x,y)[0]=r;
+          image.at<Vec3b>(x,y)[1]=g;
+          image.at<Vec3b>(x,y)[2]=b;
+      }
+    } 
+  }
+return NULL;
+ }
 
