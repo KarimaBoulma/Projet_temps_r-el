@@ -39,6 +39,38 @@ double X = 0;
 double Y = 0;
 
 
+// déclarer la fonction pour la creation de la fractal
+void *CalculFractaleJulia(void *arg);
+
+int main( int argc, char** argv )
+{
+double temps;
+ clock_t t1, t2;
+ 
+ 
+pthread_t thread_f[Nb_Thread];
+  image=cv::Mat(LARG, HAUT, CV_8UC3);
+    
+     
+refresh: 
+    
+for(int i=0;i< Nb_Thread;i++){
+t1 = clock();   
+ pthread_create (&thread_f[i], NULL, CalculFractaleJulia, (void*)NULL);
+ t2 = clock();
+     temps = ((double)(t2-t1)*1000/CLOCKS_PER_SEC);
+     
+ }
+ cout<<"le temps d'execution "<< temps <<"sec "<<endl;
+  
+ofstream fichier("resultat.dat", ios::app);
+ 
+        if(fichier)
+        {
+           
+
+
+
 
 
 
