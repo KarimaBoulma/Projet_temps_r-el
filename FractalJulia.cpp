@@ -14,6 +14,17 @@ using namespace cv;
 Mat image;
 
 
+//declaration des parametres de la couleur
+void HSVtoRGB( unsigned char  *r, unsigned char  *g, unsigned char  *b, unsigned char  h, unsigned char  s, unsigned char  v );
+// valeur reel et imaginaire de la fracttale
+
+std::complex<long double> c( 0.0285,0.013);
+
+long double reel=0.285,imaginaire=0.01;
+double X = 0;
+double Y = 0;
+
+
 
 
 
