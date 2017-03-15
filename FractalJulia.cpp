@@ -14,6 +14,20 @@ using namespace cv;
 Mat image;
 
 
+ #define V 4
+ #define ITER 250
+//nombre de thread
+#define Nb_Thread 10
+// mutex pour protéger VALEUR
+pthread_mutex_t mutex; 
+
+// taille de l'image
+ #define HAUT 800
+ #define LARG 800
+
+
+
+
 //declaration des parametres de la couleur
 void HSVtoRGB( unsigned char  *r, unsigned char  *g, unsigned char  *b, unsigned char  h, unsigned char  s, unsigned char  v );
 // valeur reel et imaginaire de la fracttale
