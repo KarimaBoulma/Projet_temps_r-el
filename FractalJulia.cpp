@@ -69,7 +69,18 @@ ofstream fichier("resultat.dat", ios::app);
         {
            
 
-
+ //fichier << "le temps " << duree<< endl;
+                fichier<< " #nombres de threads            #temps d'execution en sec\n"<< "                    "<<Nb_Thread<<"            "<< temps << endl;
+                fichier.close();
+        }
+        else
+              {
+                cout << "Impossible d'ouvrir le fichier !" << endl;
+              }   
+    //Gestion des entrées
+  while(char key = cvWaitKey(66)) {
+    switch(key){
+      case 'a':
 
 
 
