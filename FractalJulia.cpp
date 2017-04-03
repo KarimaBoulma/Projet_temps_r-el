@@ -82,7 +82,7 @@ ofstream fichier("resultat.dat", ios::app);
     switch(key){
       case 'a':
 
-/ Modification de la constante de la fractale 
+// Modification de la constante de la fractale 
       reel = reel + 0.1;
       goto refresh;
       break;
@@ -102,6 +102,32 @@ ofstream fichier("resultat.dat", ios::app);
       goto refresh;
       break;
 
+
+//Utilisation de Zoom/Dezoom 
+      case 'd':
+      
+      X -= 100;
+      Y -= 100;
+      goto refresh;
+      break;
+      case 's':
+     
+      X += 100;
+      Y += 100;
+      goto refresh;
+      break;
+
+      default:
+      break;
+    }
+    if (key == 'q')
+    break;
+    imshow("fractale image",image ); 
+  }
+// ferme la fenêtre
+  cvDestroyWindow("fractale image"); 
+  return 0;
+}
 
 
 // fractale
