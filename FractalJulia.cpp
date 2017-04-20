@@ -13,7 +13,7 @@ using namespace std;
 using namespace cv;
 Mat image;
 
-
+ 
  #define V 4
  #define ITER 250
 //nombre de thread
@@ -27,7 +27,6 @@ pthread_mutex_t mutex;
 
 
 
-
 //declaration des parametres de la couleur
 void HSVtoRGB( unsigned char  *r, unsigned char  *g, unsigned char  *b, unsigned char  h, unsigned char  s, unsigned char  v );
 // valeur reel et imaginaire de la fracttale
@@ -37,6 +36,15 @@ std::complex<long double> c( 0.0285,0.013);
 long double reel=0.285,imaginaire=0.01;
 double X = 0;
 double Y = 0;
+
+
+
+
+
+
+
+
+
 
 
 // déclarer la fonction pour la creation de la fractal
@@ -68,8 +76,7 @@ ofstream fichier("resultat.dat", ios::app);
         if(fichier)
         {
            
-
- //fichier << "le temps " << duree<< endl;
+                //fichier << "le temps " << duree<< endl;
                 fichier<< " #nombres de threads            #temps d'execution en sec\n"<< "                    "<<Nb_Thread<<"            "<< temps << endl;
                 fichier.close();
         }
@@ -81,6 +88,7 @@ ofstream fichier("resultat.dat", ios::app);
   while(char key = cvWaitKey(66)) {
     switch(key){
       case 'a':
+      
 
 // Modification de la constante de la fractale 
       reel = reel + 0.1;
@@ -101,7 +109,6 @@ ofstream fichier("resultat.dat", ios::app);
       imaginaire = imaginaire - 0.05;
       goto refresh;
       break;
-
 
 //Utilisation de Zoom/Dezoom 
       case 'd':
@@ -130,6 +137,13 @@ ofstream fichier("resultat.dat", ios::app);
 }
 
 
+
+
+
+
+
+
+
 // fractale
 
 void *CalculFractaleJulia(void *arg){
@@ -156,7 +170,6 @@ std::complex<long double> c (reel,imaginaire);
 unsigned char brillance=150; 
           unsigned char saturation=150; 
           unsigned char r,g,b;
-
 // definition de la couleur de l'image
 	  HSVtoRGB( & r, & g, & b, couleur, brillance, saturation );
           image.at<Vec3b>(x,y)[0]=r;
@@ -167,7 +180,6 @@ unsigned char brillance=150;
   }
 return NULL;
  }
-
 
 // fonction de convertion de HSV A RGB
 
@@ -237,4 +249,3 @@ void HSVtoRGB( unsigned char  *r, unsigned char  *g, unsigned char  *b, unsigned
 unsigned char randomVal(){
 return (unsigned char)(rand()%360);
 }
-
