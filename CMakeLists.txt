@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.0)
+project(Julia)
+find_package(OpenCV REQUIRED)
+add_executable( Julia ProjetKarima2.cpp)
+target_link_libraries(Julia ${OpenCV_LIBS})
