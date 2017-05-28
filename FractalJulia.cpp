@@ -82,6 +82,25 @@ ofstream fichier("resultat.dat", ios::app);
     switch(key){
       case 'a':
 
+/ Modification de la constante de la fractale 
+      reel = reel + 0.1;
+      goto refresh;
+      break;
+      case 'z':
+      
+      reel = reel - 0.1;
+      goto refresh;
+      break;
+      case 'o':
+      
+      imaginaire = imaginaire + 0.1;
+      goto refresh;
+      break;
+      case 'p':
+      
+      imaginaire = imaginaire - 0.05;
+      goto refresh;
+      break;
 
 
 
